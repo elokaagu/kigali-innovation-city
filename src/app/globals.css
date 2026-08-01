@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 200 20% 98%;
+    --foreground: 200 50% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 50% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 50% 10%;
+
+    --primary: 48 91% 55%;
+    --primary-foreground: 200 50% 10%;
+
+    --secondary: 200 20% 94%;
+    --secondary-foreground: 200 50% 10%;
+
+    --muted: 200 15% 94%;
+    --muted-foreground: 200 10% 40%;
+
+    --accent: 156 95% 48%;
+    --accent-foreground: 200 50% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 15% 88%;
+    --input: 200 15% 88%;
+    --ring: 48 91% 55%;
+
+    --radius: 0.5rem;
+
+    /* KIC brand tokens (from Poppins template) */
+    --kic-dark: 200 50% 10%;
+    --kic-gold: 48 91% 55%;
+    --kic-green: 156 95% 48%;
+    --kic-purple: 270 65% 52%;
+    --kic-grey: 200 10% 40%;
+    --kic-grey-light: 200 20% 96%;
+
+    --font-display-tracking: -0.02em;
+  }
+
+  .dark {
+    --background: 200 50% 10%;
+    --foreground: 200 10% 95%;
+    --card: 200 45% 13%;
+    --card-foreground: 200 10% 95%;
+    --popover: 200 45% 13%;
+    --popover-foreground: 200 10% 95%;
+    --primary: 48 91% 55%;
+    --primary-foreground: 200 50% 10%;
+    --secondary: 200 40% 16%;
+    --secondary-foreground: 200 10% 95%;
+    --muted: 200 40% 16%;
+    --muted-foreground: 200 10% 65%;
+    --accent: 156 95% 48%;
+    --accent-foreground: 200 50% 10%;
+    --border: 200 30% 20%;
+    --input: 200 30% 20%;
+    --ring: 48 91% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+    letter-spacing: var(--font-display-tracking);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s ease-out both;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
