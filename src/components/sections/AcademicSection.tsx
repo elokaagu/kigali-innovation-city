@@ -1,7 +1,8 @@
-import { GraduationCap, BookOpen, Brain, Globe2 } from "lucide-react";
+import { BookOpen, Brain, Globe2, GraduationCap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import SectionHeader from "@/components/common/SectionHeader";
+import InstitutionMark from "@/components/common/InstitutionMark";
 
 const institutions = [
   {
@@ -19,7 +20,7 @@ const institutions = [
       { value: "52,000", label: "Jobs Created" },
       { value: "59", label: "Nationalities" },
     ],
-    status: "Operational",
+    status: "Operational" as const,
   },
   {
     abbr: "CMU",
@@ -34,7 +35,7 @@ const institutions = [
       { value: "AI", label: "Focus Area" },
       { value: "STEM", label: "Excellence" },
     ],
-    status: "Operational",
+    status: "Operational" as const,
   },
   {
     abbr: "AIMS",
@@ -47,7 +48,7 @@ const institutions = [
       { value: "Pan-African", label: "Network" },
       { value: "STEM", label: "Focus" },
     ],
-    status: "Under Development",
+    status: "Under Development" as const,
   },
   {
     abbr: "UoR",
@@ -62,7 +63,7 @@ const institutions = [
       { value: "eHealth", label: "Focus Area" },
       { value: "Regional", label: "Centre of Excellence" },
     ],
-    status: "Operational",
+    status: "Operational" as const,
   },
 ];
 
@@ -76,36 +77,42 @@ export default function AcademicSection() {
           subtitle="Four of the continent's top STEM higher learning institutions call KIC home, creating a captive pipeline of talent for tenants and investors."
         />
 
+        {/* Logo strip */}
+        <div className="flex flex-wrap justify-center gap-6 sm:gap-10 mb-12 pb-8 border-b border-border">
+          {institutions.map((inst) => (
+            <InstitutionMark
+              key={inst.abbr}
+              abbr={inst.abbr}
+              name={inst.name}
+              size="lg"
+            />
+          ))}
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {institutions.map((inst) => (
-            <Card key={inst.abbr} className="overflow-hidden">
+            <Card key={inst.abbr} className="overflow-hidden hover:shadow-lg transition-shadow border-0 shadow-md">
               <CardContent className="p-0">
                 <div className="bg-kic-dark px-6 py-5 flex items-center justify-between">
                   <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-xl bg-kic-gold flex items-center justify-center">
-                      <span className="text-kic-dark font-bold text-lg">
-                        {inst.abbr}
-                      </span>
-                    </div>
+                    <InstitutionMark abbr={inst.abbr} size="md" />
                     <div>
-                      <h3 className="text-white font-semibold text-lg">
+                      <h3 className="text-white font-semibold text-base sm:text-lg leading-snug">
                         {inst.name}
                       </h3>
                       <Badge
-                        variant={
-                          inst.status === "Operational" ? "green" : "gold"
-                        }
-                        className="mt-1"
+                        variant={inst.status === "Operational" ? "green" : "gold"}
+                        className="mt-1.5"
                       >
                         {inst.status}
                       </Badge>
                     </div>
                   </div>
-                  <GraduationCap className="h-8 w-8 text-kic-gold/40" />
+                  <GraduationCap className="h-7 w-7 text-kic-gold/30 shrink-0 hidden sm:block" />
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
-                    <BookOpen className="h-4 w-4 text-muted-foreground" />
+                    <BookOpen className="h-4 w-4 text-kic-gold" />
                     <p className="text-sm font-medium">Programs</p>
                   </div>
                   <ul className="space-y-1.5 mb-6">
@@ -125,12 +132,8 @@ export default function AcademicSection() {
                         key={stat.label}
                         className="text-center p-3 rounded-lg bg-kic-grey-light"
                       >
-                        <p className="text-lg font-bold text-kic-dark">
-                          {stat.value}
-                        </p>
-                        <p className="text-xs text-muted-foreground">
-                          {stat.label}
-                        </p>
+                        <p className="text-lg font-bold text-kic-dark">{stat.value}</p>
+                        <p className="text-xs text-muted-foreground">{stat.label}</p>
                       </div>
                     ))}
                   </div>
@@ -140,7 +143,7 @@ export default function AcademicSection() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-wrap justify-center gap-6 text-center">
+        <div className="mt-12 flex flex-wrap justify-center gap-4 sm:gap-6">
           {[
             { icon: Brain, label: "~2,000 ICT graduates/year" },
             { icon: Globe2, label: "~1M fluent in English" },
@@ -148,7 +151,7 @@ export default function AcademicSection() {
           ].map(({ icon: Icon, label }) => (
             <div
               key={label}
-              className="flex items-center gap-3 px-6 py-4 rounded-xl bg-kic-grey-light"
+              className="flex items-center gap-3 px-5 py-3 rounded-xl bg-kic-grey-light border border-border/50"
             >
               <Icon className="h-5 w-5 text-kic-gold" />
               <span className="text-sm font-medium">{label}</span>

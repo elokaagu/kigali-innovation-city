@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import KicLogo from "@/components/brand/KicLogo";
 
 const navItems = [
   { id: "hero", label: "Home" },
@@ -65,7 +66,7 @@ export default function Navigation() {
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
         isScrolled
-          ? "bg-background/95 backdrop-blur-sm border-b border-border shadow-sm"
+          ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm"
           : "bg-transparent"
       )}
     >
@@ -73,29 +74,12 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <button
             onClick={() => scrollToSection("hero")}
-            className="flex items-center gap-2 group"
+            className="group transition-opacity hover:opacity-90"
           >
-            <div className="w-9 h-9 rounded-lg bg-kic-gold flex items-center justify-center">
-              <span className="text-kic-dark font-bold text-sm">KIC</span>
-            </div>
-            <div className="hidden sm:block text-left">
-              <p
-                className={cn(
-                  "text-sm font-semibold leading-tight",
-                  isScrolled ? "text-foreground" : "text-white"
-                )}
-              >
-                Kigali Innovation City
-              </p>
-              <p
-                className={cn(
-                  "text-xs leading-tight",
-                  isScrolled ? "text-muted-foreground" : "text-white/60"
-                )}
-              >
-                Digital Heart of Africa
-              </p>
-            </div>
+            <KicLogo
+              variant={isScrolled ? "dark" : "light"}
+              showWordmark
+            />
           </button>
 
           <div className="hidden lg:flex items-center gap-1">
@@ -110,7 +94,7 @@ export default function Navigation() {
             ))}
             <button
               onClick={() => scrollToSection("contact")}
-              className="ml-4 px-4 py-2 rounded-lg bg-kic-gold text-kic-dark text-sm font-semibold hover:bg-kic-gold/90 transition-colors"
+              className="ml-4 px-4 py-2 rounded-lg bg-kic-gold text-kic-dark text-sm font-semibold hover:bg-kic-gold/90 transition-all hover:shadow-md"
             >
               Invest Now
             </button>
@@ -123,12 +107,14 @@ export default function Navigation() {
                   "p-2 rounded-md",
                   isScrolled ? "text-foreground" : "text-white"
                 )}
+                aria-label="Open menu"
               >
                 <Menu className="h-6 w-6" />
               </button>
             </SheetTrigger>
             <SheetContent side="right" className="w-72">
-              <div className="flex flex-col gap-1 mt-8">
+              <KicLogo variant="dark" showWordmark className="mb-6" />
+              <div className="flex flex-col gap-1">
                 {navItems.map((item) => (
                   <button
                     key={item.id}

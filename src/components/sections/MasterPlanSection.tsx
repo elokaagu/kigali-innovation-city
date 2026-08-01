@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
+import { MapPin } from "lucide-react";
 import {
   plots,
   plotCategoryColors,
@@ -31,22 +33,21 @@ export default function MasterPlanSection() {
   const categories = Object.entries(plotCategoryLabels) as [PlotCategory, string][];
 
   return (
-    <section id="masterplan" className="py-20 sm:py-28">
+    <section id="masterplan" className="py-20 sm:py-28 bg-kic-grey-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Master Plan"
           title="Interactive Site Map"
-          subtitle="Explore KIC's 62-hectare masterplan. Click any plot to view land use details and linked investment opportunities."
+          subtitle="Explore KIC's 62-hectare masterplan on the aerial site view. Click any plot to view land use details and linked investment opportunities."
         />
 
-        {/* Category filter */}
         <div className="flex flex-wrap justify-center gap-2 mb-8">
           <button
             onClick={() => setActiveCategory("all")}
-            className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
+            className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
               activeCategory === "all"
-                ? "bg-kic-dark text-white"
-                : "bg-kic-grey-light text-muted-foreground hover:bg-muted"
+                ? "bg-kic-dark text-white shadow-md"
+                : "bg-white text-muted-foreground hover:bg-muted border border-border"
             }`}
           >
             All Plots
@@ -55,10 +56,10 @@ export default function MasterPlanSection() {
             <button
               key={key}
               onClick={() => setActiveCategory(key)}
-              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors flex items-center gap-1.5 ${
+              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all flex items-center gap-1.5 ${
                 activeCategory === key
-                  ? "bg-kic-dark text-white"
-                  : "bg-kic-grey-light text-muted-foreground hover:bg-muted"
+                  ? "bg-kic-dark text-white shadow-md"
+                  : "bg-white text-muted-foreground hover:bg-muted border border-border"
               }`}
             >
               <span
@@ -71,31 +72,26 @@ export default function MasterPlanSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* SVG Map */}
-          <div className="lg:col-span-2 rounded-2xl border bg-kic-dark/5 overflow-hidden">
+          {/* Map with aerial imagery */}
+          <div className="lg:col-span-2 rounded-2xl border overflow-hidden shadow-lg relative aspect-[10/7] bg-kic-dark">
+            <Image
+              src="/images/kigali-innovation-city.jpeg"
+              alt="Kigali Innovation City aerial view"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 66vw"
+            />
+            <div className="absolute inset-0 bg-kic-dark/40" />
+
             <svg
               viewBox="0 0 1000 700"
-              className="w-full h-auto"
+              className="absolute inset-0 w-full h-full"
               role="img"
-              aria-label="Kigali Innovation City master plan"
+              aria-label="Interactive KIC master plan overlay"
+              preserveAspectRatio="xMidYMid slice"
             >
-              {/* Background */}
-              <rect x="0" y="0" width="1000" height="700" fill="#0E222B" rx="0" />
-              <text x="500" y="30" textAnchor="middle" fill="#F5D424" fontSize="16" fontWeight="600">
-                KIGALI INNOVATION CITY — MASTER PLAN
-              </text>
-              <text x="500" y="52" textAnchor="middle" fill="#ffffff60" fontSize="11">
-                62 Hectares · 5 Phases · Click plots for details
-              </text>
+              <rect x="60" y="70" width="880" height="560" fill="none" stroke="#F5D424" strokeWidth="2" strokeDasharray="8 4" rx="8" opacity="0.8" />
 
-              {/* Road network hint */}
-              <path d="M 50 350 Q 500 320 950 350" stroke="#ffffff15" strokeWidth="8" fill="none" />
-              <path d="M 500 60 L 500 650" stroke="#ffffff10" strokeWidth="6" fill="none" />
-
-              {/* Site boundary */}
-              <rect x="60" y="70" width="880" height="560" fill="none" stroke="#F5D424" strokeWidth="2" strokeDasharray="8 4" rx="8" />
-
-              {/* Plots */}
               {filteredPlots.map((plot) => {
                 const isSelected = selectedPlot?.id === plot.id;
                 const color = plotCategoryColors[plot.category];
@@ -107,11 +103,12 @@ export default function MasterPlanSection() {
                       width={plot.width}
                       height={plot.height}
                       fill={color}
-                      fillOpacity={isSelected ? 0.9 : 0.65}
-                      stroke={isSelected ? "#F5D424" : "#ffffff40"}
-                      strokeWidth={isSelected ? 3 : 1}
+                      fillOpacity={isSelected ? 0.85 : 0.55}
+                      stroke={isSelected ? "#F5D424" : "#ffffff"}
+                      strokeWidth={isSelected ? 3 : 1.5}
                       rx="4"
-                      className="cursor-pointer transition-all"
+                      className="cursor-pointer"
+                      style={{ transition: "all 0.2s ease" }}
                       onClick={() => setSelectedPlot(plot)}
                       onKeyDown={(e) => e.key === "Enter" && setSelectedPlot(plot)}
                       tabIndex={0}
@@ -122,10 +119,11 @@ export default function MasterPlanSection() {
                       x={plot.x + plot.width / 2}
                       y={plot.y + plot.height / 2 + 4}
                       textAnchor="middle"
-                      fill="#0E222B"
+                      fill="white"
                       fontSize={plot.width > 60 ? 11 : 9}
                       fontWeight="700"
                       pointerEvents="none"
+                      style={{ textShadow: "0 1px 3px rgba(0,0,0,0.8)" }}
                     >
                       {plot.label}
                     </text>
@@ -133,10 +131,15 @@ export default function MasterPlanSection() {
                 );
               })}
             </svg>
+
+            <div className="absolute top-4 left-4 px-3 py-1.5 rounded-lg bg-kic-dark/80 backdrop-blur-sm border border-white/10">
+              <p className="text-xs font-semibold text-kic-gold">KIC Master Plan</p>
+              <p className="text-[10px] text-white/60">62 ha · Surbana Jurong</p>
+            </div>
           </div>
 
           {/* Plot detail panel */}
-          <div className="rounded-2xl border bg-card p-6 flex flex-col">
+          <div className="rounded-2xl border bg-card p-6 flex flex-col shadow-md">
             {selectedPlot ? (
               <>
                 <div className="flex items-start justify-between mb-4">
@@ -147,7 +150,7 @@ export default function MasterPlanSection() {
                     </p>
                   </div>
                   <span
-                    className="w-4 h-4 rounded shrink-0 mt-1"
+                    className="w-4 h-4 rounded shrink-0 mt-1 ring-2 ring-white shadow"
                     style={{ backgroundColor: plotCategoryColors[selectedPlot.category] }}
                   />
                 </div>
@@ -167,7 +170,7 @@ export default function MasterPlanSection() {
                       <span className="font-medium">{selectedPlot.area}</span>
                     </div>
                   )}
-                  <div className="flex justify-between text-sm">
+                  <div className="flex justify-between text-sm items-center">
                     <span className="text-muted-foreground">Status</span>
                     <Badge variant={selectedPlot.status === "available" ? "green" : "gold"}>
                       {statusLabels[selectedPlot.status]}
@@ -178,7 +181,7 @@ export default function MasterPlanSection() {
                 {selectedPlot.opportunitySlug ? (
                   <Link
                     href={`/opportunities/${selectedPlot.opportunitySlug}`}
-                    className="block w-full text-center py-3 rounded-xl bg-kic-gold text-kic-dark font-semibold text-sm hover:bg-kic-gold/90 transition-colors"
+                    className="block w-full text-center py-3 rounded-xl bg-kic-gold text-kic-dark font-semibold text-sm hover:bg-kic-gold/90 transition-all hover:shadow-md"
                   >
                     View Investment Details →
                   </Link>
@@ -192,29 +195,28 @@ export default function MasterPlanSection() {
 
                 <button
                   onClick={() => setSelectedPlot(null)}
-                  className="mt-3 text-xs text-muted-foreground hover:text-foreground transition-colors text-center"
+                  className="mt-3 text-xs text-muted-foreground hover:text-foreground transition-colors text-center w-full"
                 >
                   Clear selection
                 </button>
               </>
             ) : (
               <div className="flex flex-col items-center justify-center flex-1 text-center py-8">
-                <div className="w-16 h-16 rounded-2xl bg-kic-grey-light flex items-center justify-center mb-4">
-                  <span className="text-2xl">🗺️</span>
+                <div className="w-16 h-16 rounded-2xl bg-kic-gold/10 flex items-center justify-center mb-4 border border-kic-gold/20">
+                  <MapPin className="h-8 w-8 text-kic-gold" />
                 </div>
-                <p className="text-muted-foreground text-sm">
-                  Click a plot on the map to view land use details and investment opportunities.
+                <p className="text-muted-foreground text-sm leading-relaxed max-w-[220px]">
+                  Select a highlighted plot on the aerial map to explore investment opportunities.
                 </p>
               </div>
             )}
           </div>
         </div>
 
-        {/* Legend */}
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           {categories.map(([key, label]) => (
             <div key={key} className="flex items-center gap-2 text-xs text-muted-foreground">
-              <span className="w-3 h-3 rounded" style={{ backgroundColor: plotCategoryColors[key] }} />
+              <span className="w-3 h-3 rounded shadow-sm" style={{ backgroundColor: plotCategoryColors[key] }} />
               {label}
             </div>
           ))}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   ArrowLeft,
@@ -49,8 +50,16 @@ export default async function OpportunityPage({ params }: PageProps) {
       <Navigation />
       <main className="pt-16">
         {/* Hero banner */}
-        <div className="bg-kic-dark text-white py-16 sm:py-20">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative bg-kic-dark text-white py-16 sm:py-20 overflow-hidden">
+          <Image
+            src="/images/kigali-innovation-city.jpeg"
+            alt=""
+            fill
+            className="object-cover opacity-25"
+            aria-hidden
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-kic-dark via-kic-dark/90 to-kic-dark/70" />
+          <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <Link
               href="/#opportunities"
               className="inline-flex items-center gap-2 text-white/60 hover:text-kic-gold text-sm mb-6 transition-colors"

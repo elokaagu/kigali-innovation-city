@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Download, Mail } from "lucide-react";
 
@@ -9,24 +10,30 @@ export default function HeroSection() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
+      <Image
+        src="/images/kigali-skyline.jpg"
+        alt="Kigali skyline at dusk"
+        fill
+        className="object-cover object-center scale-105"
+        priority
+        quality={90}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-kic-dark/80 via-kic-dark/65 to-kic-dark/90" />
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 opacity-30"
         style={{
-          backgroundImage: `
-            radial-gradient(circle at 20% 50%, hsl(var(--kic-gold) / 0.15) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, hsl(var(--kic-green) / 0.1) 0%, transparent 40%),
-            linear-gradient(135deg, hsl(var(--kic-dark)) 0%, hsl(200 45% 13%) 100%)
-          `,
+          backgroundImage:
+            "radial-gradient(circle at 20% 50%, hsl(var(--kic-gold) / 0.25) 0%, transparent 50%), radial-gradient(circle at 80% 20%, hsl(var(--kic-green) / 0.15) 0%, transparent 40%)",
         }}
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-32">
         <div className="max-w-4xl mx-auto">
-          <span className="inline-block mb-6 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-kic-gold/20 text-kic-gold border border-kic-gold/30 animate-fade-in-up">
+          <span className="inline-block mb-6 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-kic-gold/20 text-kic-gold border border-kic-gold/30 backdrop-blur-sm animate-fade-in-up">
             Investment Opportunity · February 2026
           </span>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up drop-shadow-lg">
             Kigali Innovation City
           </h1>
 
@@ -38,7 +45,7 @@ export default function HeroSection() {
           </p>
 
           <p
-            className="text-base sm:text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto animate-fade-in-up"
+            className="text-base sm:text-lg md:text-xl text-white/85 mb-10 max-w-2xl mx-auto animate-fade-in-up leading-relaxed"
             style={{ animationDelay: "0.2s" }}
           >
             A 62-hectare mixed-use innovation hub — connecting world-class
@@ -59,7 +66,7 @@ export default function HeroSection() {
             <Button
               variant="outline"
               size="lg"
-              className="border-white/30 text-white hover:bg-white/10 hover:text-white bg-transparent"
+              className="border-white/40 text-white hover:bg-white/10 hover:text-white bg-white/5 backdrop-blur-sm"
               asChild
             >
               <a href="#contact">
@@ -70,7 +77,7 @@ export default function HeroSection() {
           </div>
 
           <div
-            className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto animate-fade-in-up"
+            className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-3xl mx-auto animate-fade-in-up"
             style={{ animationDelay: "0.4s" }}
           >
             {[
@@ -79,7 +86,10 @@ export default function HeroSection() {
               { value: "4", label: "Top STEM Institutions" },
               { value: "7.5%", label: "GDP Growth p.a." },
             ].map((stat) => (
-              <div key={stat.label} className="text-center">
+              <div
+                key={stat.label}
+                className="text-center p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10"
+              >
                 <p className="text-2xl sm:text-3xl font-bold text-kic-gold">
                   {stat.value}
                 </p>
@@ -92,9 +102,9 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-kic-gold/70 rounded-full mt-2" />
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float z-10">
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center backdrop-blur-sm">
+          <div className="w-1 h-3 bg-kic-gold/80 rounded-full mt-2" />
         </div>
       </div>
     </section>
