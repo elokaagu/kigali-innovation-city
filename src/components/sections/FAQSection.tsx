@@ -14,18 +14,18 @@ const FAQSection = () => {
   const faqs = [
     {
       id: "item-1",
-      question: "What is Citisquare?",
-      answer: "Citisquare is a diversified Unit Trust Fund that connects diaspora investors with high-growth opportunities across multiple sectors in Rwanda, including real estate, green energy, agro-processing, and fixed income securities."
+      question: "What is Citisquare Africa?",
+      answer: "Citisquare Africa is a real estate investment consultancy organisation on a mission to democratise access to legally structured, high-return, capital-growth real estate opportunities across the continent. We specialise in project origination, structuring, and development — identifying high-potential opportunities, structuring them into sound investable vehicles, and guiding them through to delivery."
     },
     {
       id: "item-2", 
-      question: "What sectors does Citisquare invest in?",
-      answer: "Our diversified portfolio spans four key sectors: real estate developments, fixed income securities (bonds, treasury bills), green energy initiatives, and agro-processing ventures focused on export opportunities."
+      question: "What services does Citisquare Africa provide?",
+      answer: "We provide end-to-end real estate investment consultancy: project origination (identifying high-potential assets), structuring (creating legally sound, investable vehicles), and development (guiding projects through to delivery). We work with individual investors, institutions, and development finance partners across Africa."
     },
     {
       id: "item-3",
-      question: "What are the expected returns?",
-      answer: "We target annual returns of 8 to 10% through our diversified Unit Trust Fund approach, which balances growth opportunities across multiple high-performing sectors in Rwanda's economy."
+      question: "What types of projects does Citisquare Africa work on?",
+      answer: "Our portfolio includes flagship developments such as Vision City 2 in Kigali and Kigali Innovation City in Rwanda, alongside opportunities across Nigeria's real estate and financial services ecosystem. We focus on high-return, capital-growth real estate with strong governance structures."
     },
     {
       id: "item-4",

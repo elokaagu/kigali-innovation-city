@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "RiseAfric Unit Trust Fund | Citisquare";
+export const alt = "Citisquare Africa | Real Estate Investment Consultancy";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -39,34 +39,34 @@ export default function OpenGraphImage() {
               justifyContent: "center",
               fontSize: "28px",
               fontWeight: 700,
-              color: "#0E222B",
+              color: "#262626",
             }}
           >
             C
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <span style={{ fontSize: "22px", fontWeight: 600, color: "white" }}>
-              Citisquare
+              Citisquare Africa
             </span>
             <span style={{ fontSize: "14px", color: "#C9A227", letterSpacing: "0.1em" }}>
-              RISEAFRIC UNIT TRUST FUND
+              REAL ESTATE INVESTMENT CONSULTANCY
             </span>
           </div>
         </div>
         <h1
           style={{
-            fontSize: "56px",
+            fontSize: "48px",
             fontWeight: 700,
             color: "white",
-            lineHeight: 1.1,
+            lineHeight: 1.15,
             marginBottom: "24px",
             maxWidth: "900px",
           }}
         >
-          Invest in Rwanda&apos;s Fastest Growing Asset Classes
+          Origination · Structuring · Development
         </h1>
-        <p style={{ fontSize: "24px", color: "rgba(255,255,255,0.7)", maxWidth: "800px" }}>
-          Expertly managed investments in Africa&apos;s rising markets · 8–10% target returns
+        <p style={{ fontSize: "22px", color: "rgba(255,255,255,0.7)", maxWidth: "900px", lineHeight: 1.4 }}>
+          Democratising access to legally structured, high-return real estate across Africa — underpinned by good governance at every stage.
         </p>
         <div
           style={{
@@ -76,12 +76,12 @@ export default function OpenGraphImage() {
           }}
         >
           {[
-            { val: "8–10%", label: "Target Returns" },
-            { val: "$5M", label: "Fund Size" },
-            { val: "2", label: "Flagship Projects" },
+            { val: "Origination", label: "High-potential assets" },
+            { val: "Structuring", label: "Investable vehicles" },
+            { val: "Delivery", label: "End-to-end development" },
           ].map((s) => (
             <div key={s.label} style={{ display: "flex", flexDirection: "column" }}>
-              <span style={{ fontSize: "32px", fontWeight: 700, color: "#C9A227" }}>
+              <span style={{ fontSize: "24px", fontWeight: 700, color: "#C9A227" }}>
                 {s.val}
               </span>
               <span style={{ fontSize: "14px", color: "rgba(255,255,255,0.5)" }}>

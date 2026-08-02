@@ -25,11 +25,11 @@ export default function MobileCTA() {
 
         <div className="flex items-center justify-between mb-3 relative z-10">
           <div className="animate-fade-in-left">
-            <p className="font-semibold text-foreground text-sm animate-pulse">
-              Early Investor Special
+            <p className="font-semibold text-foreground text-sm">
+              Partner With Citisquare Africa
             </p>
             <p className="text-xs text-muted-foreground">
-              8-10% returns • Only 45 spots left
+              Origination · Structuring · Development
             </p>
           </div>
           <button
@@ -49,7 +49,7 @@ export default function MobileCTA() {
         >
           <Button className="w-full bg-citisquare-gold hover:bg-citisquare-gold/90 text-white font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl group-hover:animate-pulse-glow">
             <ExternalLink className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            Secure Investment Spot
+            Partner With Us
           </Button>
         </a>
       </div>

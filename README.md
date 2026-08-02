@@ -1,6 +1,6 @@
-# RiseAfric Unit Trust Fund | Citisquare
+# Citisquare Africa
 
-Official website for the **RiseAfric Unit Trust Fund** — connecting diaspora and institutional investors to Rwanda's fastest-growing asset classes.
+Real estate investment consultancy — project origination, structuring, and development across Africa.
 
 Built with **Next.js 15**, **React 18**, **TypeScript**, **Tailwind CSS**, and **shadcn/ui**.
 
@@ -13,24 +13,13 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Scripts
-
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Production build |
-| `npm run start` | Start production server |
-| `npm run lint` | Run ESLint |
-
 ## Brand
 
-- **RiseAfric Unit Trust Fund** — diversified investment fund
-- **Citisquare** — investment platform brand
-- **Featured projects** — Vision City 2 and Kigali Innovation City
+**Citisquare Africa** is a real estate investment consultancy organisation on a mission to democratise access to legally structured, high-return, capital-growth real estate opportunities across the continent, underpinned by good governance at every stage.
+
+Company copy lives in `src/data/company.ts`.
 
 ## Deploy
-
-Deploy to [Vercel](https://vercel.com) or any platform supporting Next.js.
 
 ```bash
 npm run build

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { COMPANY_BIO_SHORT, COMPANY_NAME, COMPANY_TAGLINE } from "@/data/company";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -14,30 +15,28 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://citisquare-kigali-connect-main.vercel.app"
   ),
-  title: "RiseAfric Unit Trust Fund | Citisquare",
-  description:
-    "Invest in Rwanda's fastest growing asset classes through the RiseAfric Unit Trust Fund. Expertly managed investments in Africa's rising markets.",
+  title: `${COMPANY_NAME} | Real Estate Investment Consultancy`,
+  description: COMPANY_BIO_SHORT,
   keywords: [
-    "RiseAfric",
-    "Citisquare",
-    "Unit Trust Fund",
-    "Rwanda investment",
-    "Africa diaspora investment",
-    "Vision City",
+    "Citisquare Africa",
+    "real estate investment consultancy",
+    "Africa real estate",
+    "project origination",
+    "real estate structuring",
+    "Nigeria real estate",
     "Kigali Innovation City",
+    "institutional real estate",
   ],
   openGraph: {
-    title: "RiseAfric Unit Trust Fund | Citisquare",
-    description:
-      "Invest in Rwanda's fastest growing asset classes. Expertly managed investments in Africa's rising markets.",
+    title: `${COMPANY_NAME} | Real Estate Investment Consultancy`,
+    description: COMPANY_TAGLINE,
     type: "website",
-    siteName: "Citisquare",
+    siteName: COMPANY_NAME,
   },
   twitter: {
     card: "summary_large_image",
-    title: "RiseAfric Unit Trust Fund | Citisquare",
-    description:
-      "Invest in Rwanda's fastest growing asset classes. Expertly managed investments in Africa's rising markets.",
+    title: `${COMPANY_NAME} | Real Estate Investment Consultancy`,
+    description: COMPANY_TAGLINE,
   },
   icons: {
     icon: [

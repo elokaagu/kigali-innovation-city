@@ -1,4 +1,5 @@
 import { Mail, Phone, Instagram, Linkedin, MapPin } from "lucide-react";
+import { COMPANY_BIO_SHORT, COMPANY_NAME } from "@/data/company";
 
 const FooterSection = () => {
   return (
@@ -6,10 +7,9 @@ const FooterSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold text-citisquare-gold mb-4">RiseAfric Unit Trust Fund</h3>
+            <h3 className="text-2xl font-bold text-citisquare-gold mb-4">{COMPANY_NAME}</h3>
             <p className="text-white/80 mb-6 max-w-md leading-relaxed">
-              Creating inclusive investment opportunities across Africa through strategic partnerships 
-              and innovative financial solutions for diaspora and institutional investors.
+              {COMPANY_BIO_SHORT}
             </p>
             <div className="flex space-x-4">
               <a 
@@ -90,7 +90,7 @@ const FooterSection = () => {
         <div className="border-t border-white/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-white/60 text-sm mb-4 md:mb-0">
-              © 2025 RiseAfric Unit Trust Fund. All rights reserved.
+              © {new Date().getFullYear()} {COMPANY_NAME}. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
               <a href="/privacy-policy" className="text-white/60 hover:text-citisquare-gold transition-colors">
