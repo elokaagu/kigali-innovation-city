@@ -10,39 +10,43 @@ export default function ContactSection() {
         <SectionHeader
           badge="Get in Touch"
           title="Start Your Investment Journey"
-          subtitle="Download the investment deck or submit an inquiry to the Kigali Innovation City Project Development Office."
+          subtitle="Download the KIC investment deck or submit an inquiry through Citisquare. For Kigali Innovation City project inquiries, contact the Project Development Office below."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <div className="rounded-2xl border bg-card shadow-lg p-8 relative overflow-hidden">
             <div
               className="absolute top-0 right-0 w-32 h-32 rounded-full opacity-10"
-              style={{ background: "hsl(var(--kic-gold))" }}
+              style={{ background: "hsl(var(--citisquare-gold))" }}
             />
             <div className="relative">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-kic-gold to-kic-gold/70 flex items-center justify-center mb-6 shadow-md">
-                <span className="text-xl font-bold text-kic-dark">CC</span>
+              <p className="text-xs font-semibold uppercase tracking-wider text-citisquare-gold mb-4">
+                Kigali Innovation City · Project Contact
+              </p>
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-citisquare-gold to-citisquare-gold/70 flex items-center justify-center mb-6 shadow-md">
+                <span className="text-xl font-bold text-citisquare-dark">CC</span>
               </div>
 
               <h3 className="text-xl font-bold mb-1">Craig Clulow</h3>
-              <p className="text-kic-gold font-medium mb-6">Chief Executive Officer</p>
+              <p className="text-citisquare-gold font-medium mb-1">Chief Executive Officer</p>
+              <p className="text-sm text-muted-foreground mb-6">Kigali Innovation City, Project Development Office</p>
 
               <div className="space-y-3 mb-8">
                 <a href="tel:+250790135976" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors group">
-                  <span className="w-8 h-8 rounded-lg bg-kic-grey-light flex items-center justify-center group-hover:bg-kic-gold/10 transition-colors">
-                    <Phone className="h-4 w-4 text-kic-gold" />
+                  <span className="w-8 h-8 rounded-lg bg-citisquare-grey-light flex items-center justify-center group-hover:bg-citisquare-gold/10 transition-colors">
+                    <Phone className="h-4 w-4 text-citisquare-gold" />
                   </span>
                   +250 790 135 976
                 </a>
                 <a href="mailto:c.clulow@innovationcity.rw" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors group">
-                  <span className="w-8 h-8 rounded-lg bg-kic-grey-light flex items-center justify-center group-hover:bg-kic-gold/10 transition-colors">
-                    <Mail className="h-4 w-4 text-kic-gold" />
+                  <span className="w-8 h-8 rounded-lg bg-citisquare-grey-light flex items-center justify-center group-hover:bg-citisquare-gold/10 transition-colors">
+                    <Mail className="h-4 w-4 text-citisquare-gold" />
                   </span>
                   c.clulow@innovationcity.rw
                 </a>
                 <div className="flex items-start gap-3 text-sm text-muted-foreground">
-                  <span className="w-8 h-8 rounded-lg bg-kic-grey-light flex items-center justify-center shrink-0">
-                    <MapPin className="h-4 w-4 text-kic-gold" />
+                  <span className="w-8 h-8 rounded-lg bg-citisquare-grey-light flex items-center justify-center shrink-0">
+                    <MapPin className="h-4 w-4 text-citisquare-gold" />
                   </span>
                   <span className="leading-relaxed">
                     Kigali Innovation City, PDO<br />
@@ -54,7 +58,7 @@ export default function ContactSection() {
               <Button variant="cta" className="w-full" asChild>
                 <a href="/documents/KIC-Investment-Deck-2026.pptx" download>
                   <Download className="mr-2 h-4 w-4" />
-                  Download Investment Deck
+                  Download KIC Investment Deck
                 </a>
               </Button>
             </div>
@@ -63,7 +67,7 @@ export default function ContactSection() {
           <div className="rounded-2xl border bg-card shadow-lg p-8">
             <h3 className="text-xl font-bold mb-2">Submit an Inquiry</h3>
             <p className="text-sm text-muted-foreground mb-6">
-              Our team responds within 2 business days.
+              Our Citisquare team responds within 2 business days.
             </p>
             <InquiryForm />
           </div>

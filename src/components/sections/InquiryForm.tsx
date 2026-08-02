@@ -62,7 +62,7 @@ export default function InquiryForm({
         <CheckCircle2 className="h-12 w-12 text-kic-green" />
         <h3 className="text-lg font-semibold">Inquiry Submitted</h3>
         <p className="text-sm text-muted-foreground max-w-sm">
-          Thank you for your interest in Kigali Innovation City. Our team will be in touch within 2 business days.
+          Thank you for your interest in Citisquare. Our team will be in touch within 2 business days.
         </p>
         <Button variant="outline" size="sm" onClick={() => setStatus("idle")}>
           Submit Another Inquiry

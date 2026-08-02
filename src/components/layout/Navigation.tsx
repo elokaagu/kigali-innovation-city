@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import KicLogo from "@/components/brand/KicLogo";
+import CitisquareLogo from "@/components/brand/CitisquareLogo";
 
 const navItems = [
   { id: "hero", label: "Home" },
@@ -55,10 +55,10 @@ export default function Navigation() {
     cn(
       "px-3 py-2 rounded-md text-sm font-medium transition-colors",
       activeSection === id
-        ? "text-kic-gold"
+        ? "text-citisquare-gold"
         : isScrolled
-          ? "text-foreground hover:text-kic-gold"
-          : "text-white/90 hover:text-kic-gold"
+          ? "text-foreground hover:text-citisquare-gold"
+          : "text-white/90 hover:text-citisquare-gold"
     );
 
   return (
@@ -76,7 +76,7 @@ export default function Navigation() {
             onClick={() => scrollToSection("hero")}
             className="group transition-opacity hover:opacity-90"
           >
-            <KicLogo
+            <CitisquareLogo
               variant={isScrolled ? "dark" : "light"}
               showWordmark
             />
@@ -94,7 +94,7 @@ export default function Navigation() {
             ))}
             <button
               onClick={() => scrollToSection("contact")}
-              className="ml-4 px-4 py-2 rounded-lg bg-kic-gold text-kic-dark text-sm font-semibold hover:bg-kic-gold/90 transition-all hover:shadow-md"
+              className="ml-4 px-4 py-2 rounded-lg bg-citisquare-gold text-citisquare-dark text-sm font-semibold hover:bg-citisquare-gold/90 transition-all hover:shadow-md"
             >
               Invest Now
             </button>
@@ -113,7 +113,7 @@ export default function Navigation() {
               </button>
             </SheetTrigger>
             <SheetContent side="right" className="w-72">
-              <KicLogo variant="dark" showWordmark className="mb-6" />
+              <CitisquareLogo variant="dark" showWordmark className="mb-6" />
               <div className="flex flex-col gap-1">
                 {navItems.map((item) => (
                   <button
@@ -126,7 +126,7 @@ export default function Navigation() {
                 ))}
                 <button
                   onClick={() => scrollToSection("contact")}
-                  className="mt-4 px-4 py-3 rounded-lg bg-kic-gold text-kic-dark font-semibold"
+                  className="mt-4 px-4 py-3 rounded-lg bg-citisquare-gold text-citisquare-dark font-semibold"
                 >
                   Invest Now
                 </button>

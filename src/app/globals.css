@@ -34,13 +34,20 @@
 
     --radius: 0.5rem;
 
-    /* KIC brand tokens (from Poppins template) */
-    --kic-dark: 200 50% 10%;
-    --kic-gold: 48 91% 55%;
-    --kic-green: 156 95% 48%;
+    /* Citisquare brand tokens */
+    --citisquare-dark: 200 50% 10%;
+    --citisquare-gold: 48 91% 55%;
+    --citisquare-green: 156 95% 48%;
+    --citisquare-grey: 200 10% 40%;
+    --citisquare-grey-light: 200 20% 96%;
+
+    /* KIC project tokens (featured opportunity) */
+    --kic-dark: var(--citisquare-dark);
+    --kic-gold: var(--citisquare-gold);
+    --kic-green: var(--citisquare-green);
     --kic-purple: 270 65% 52%;
-    --kic-grey: 200 10% 40%;
-    --kic-grey-light: 200 20% 96%;
+    --kic-grey: var(--citisquare-grey);
+    --kic-grey-light: var(--citisquare-grey-light);
 
     --font-display-tracking: -0.02em;
   }

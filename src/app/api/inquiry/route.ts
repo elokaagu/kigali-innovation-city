@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
       const resend = new Resend(resendKey);
 
       const htmlBody = `
-        <h2>New KIC Investment Inquiry</h2>
+        <h2>New Citisquare Investment Inquiry</h2>
         <p><strong>Name:</strong> ${inquiryDetails.name}</p>
         <p><strong>Email:</strong> ${inquiryDetails.email}</p>
         <p><strong>Company:</strong> ${inquiryDetails.company || "—"}</p>
@@ -59,20 +59,20 @@ export async function POST(request: NextRequest) {
       `;
 
       await resend.emails.send({
-        from: process.env.RESEND_FROM_EMAIL ?? "KIC Website <onboarding@resend.dev>",
+        from: process.env.RESEND_FROM_EMAIL ?? "Citisquare Website <onboarding@resend.dev>",
         to: process.env.INQUIRY_TO_EMAIL ?? CONTACT_EMAIL,
         replyTo: inquiryDetails.email,
-        subject: `[KIC Inquiry] ${inquiryDetails.subject}`,
+        subject: `[Citisquare Inquiry] ${inquiryDetails.subject}`,
         html: htmlBody,
       });
     } else {
       // Log inquiry when Resend is not configured (development / fallback)
-      console.log("[KIC Inquiry]", JSON.stringify(inquiryDetails, null, 2));
+      console.log("[Citisquare Inquiry]", JSON.stringify(inquiryDetails, null, 2));
     }
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("[KIC Inquiry Error]", error);
+    console.error("[Citisquare Inquiry Error]", error);
     return NextResponse.json(
       { error: "Failed to submit inquiry. Please email c.clulow@innovationcity.rw directly." },
       { status: 500 }

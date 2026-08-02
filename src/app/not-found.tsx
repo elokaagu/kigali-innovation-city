@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Home } from "lucide-react";
-import KicLogo from "@/components/brand/KicLogo";
+import CitisquareLogo from "@/components/brand/CitisquareLogo";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-kic-dark flex flex-col items-center justify-center px-6 text-center">
-      <KicLogo variant="light" showWordmark className="mb-12" />
-      <p className="text-kic-gold text-8xl font-bold mb-4">404</p>
+    <div className="min-h-screen bg-citisquare-dark flex flex-col items-center justify-center px-6 text-center">
+      <CitisquareLogo variant="light" showWordmark className="mb-12" />
+      <p className="text-citisquare-gold text-8xl font-bold mb-4">404</p>
       <h1 className="text-2xl sm:text-3xl font-bold text-white mb-3">
         Page Not Found
       </h1>

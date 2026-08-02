@@ -50,6 +50,13 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        citisquare: {
+          dark: "hsl(var(--citisquare-dark))",
+          gold: "hsl(var(--citisquare-gold))",
+          green: "hsl(var(--citisquare-green))",
+          grey: "hsl(var(--citisquare-grey))",
+          "grey-light": "hsl(var(--citisquare-grey-light))",
+        },
         kic: {
           dark: "hsl(var(--kic-dark))",
           gold: "hsl(var(--kic-gold))",

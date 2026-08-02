@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Kigali Innovation City – Investment Opportunity";
+export const alt = "Citisquare – Africa's Investment Platform";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -42,31 +42,31 @@ export default function OpenGraphImage() {
               color: "#0E222B",
             }}
           >
-            K
+            C
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <span style={{ fontSize: "22px", fontWeight: 600, color: "white" }}>
-              Kigali Innovation City
+              Citisquare
             </span>
             <span style={{ fontSize: "14px", color: "#F5D424", letterSpacing: "0.1em" }}>
-              DIGITAL HEART OF AFRICA
+              AFRICA&apos;S INVESTMENT PLATFORM
             </span>
           </div>
         </div>
         <h1
           style={{
-            fontSize: "64px",
+            fontSize: "56px",
             fontWeight: 700,
             color: "white",
             lineHeight: 1.1,
             marginBottom: "24px",
-            maxWidth: "800px",
+            maxWidth: "900px",
           }}
         >
-          Investment Opportunity
+          Connecting Global Capital to Africa
         </h1>
-        <p style={{ fontSize: "24px", color: "rgba(255,255,255,0.7)", maxWidth: "700px" }}>
-          62-hectare mixed-use innovation hub · Rwanda
+        <p style={{ fontSize: "24px", color: "rgba(255,255,255,0.7)", maxWidth: "800px" }}>
+          Featuring Kigali Innovation City — 62-hectare mixed-use innovation hub · Rwanda
         </p>
         <div
           style={{
@@ -76,7 +76,7 @@ export default function OpenGraphImage() {
           }}
         >
           {[
-            { val: "62 ha", label: "Development" },
+            { val: "62 ha", label: "KIC Development" },
             { val: "5", label: "Phases" },
             { val: "4", label: "Universities" },
           ].map((s) => (

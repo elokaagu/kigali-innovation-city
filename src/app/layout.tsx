@@ -14,28 +14,29 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://citisquare-kigali-connect-main.vercel.app"
   ),
-  title: "Kigali Innovation City | Investment Opportunity",
+  title: "Citisquare | Africa's Investment Platform",
   description:
-    "Kigali Innovation City — the Digital Heart of Africa. A 62-hectare mixed-use development offering world-class investment opportunities in Rwanda.",
+    "Citisquare connects global capital to Africa's highest-impact development opportunities. Featuring Kigali Innovation City — a 62-hectare mixed-use innovation hub in Rwanda.",
   keywords: [
+    "Citisquare",
+    "Africa investment",
     "Kigali Innovation City",
     "KIC",
     "Rwanda investment",
-    "Africa innovation",
-    "real estate Rwanda",
+    "real estate Africa",
   ],
   openGraph: {
-    title: "Kigali Innovation City – Investment Opportunity",
+    title: "Citisquare – Africa's Investment Platform",
     description:
-      "Invest in Rwanda's flagship innovation hub. 62 hectares of mixed-use development in the Digital Heart of Africa.",
+      "Connecting global capital to Africa's highest-impact opportunities. Featuring Kigali Innovation City — Rwanda's flagship innovation hub.",
     type: "website",
-    siteName: "Kigali Innovation City",
+    siteName: "Citisquare",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kigali Innovation City – Investment Opportunity",
+    title: "Citisquare – Africa's Investment Platform",
     description:
-      "Invest in Rwanda's flagship innovation hub. 62 hectares of mixed-use development in the Digital Heart of Africa.",
+      "Connecting global capital to Africa's highest-impact opportunities. Featuring Kigali Innovation City — Rwanda's flagship innovation hub.",
   },
   icons: {
     icon: [
