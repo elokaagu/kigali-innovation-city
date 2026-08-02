@@ -14,29 +14,30 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://citisquare-kigali-connect-main.vercel.app"
   ),
-  title: "Citisquare | Africa's Investment Platform",
+  title: "RiseAfric Unit Trust Fund | Citisquare",
   description:
-    "Citisquare connects global capital to Africa's highest-impact development opportunities. Featuring Kigali Innovation City — a 62-hectare mixed-use innovation hub in Rwanda.",
+    "Invest in Rwanda's fastest growing asset classes through the RiseAfric Unit Trust Fund. Expertly managed investments in Africa's rising markets.",
   keywords: [
+    "RiseAfric",
     "Citisquare",
-    "Africa investment",
-    "Kigali Innovation City",
-    "KIC",
+    "Unit Trust Fund",
     "Rwanda investment",
-    "real estate Africa",
+    "Africa diaspora investment",
+    "Vision City",
+    "Kigali Innovation City",
   ],
   openGraph: {
-    title: "Citisquare – Africa's Investment Platform",
+    title: "RiseAfric Unit Trust Fund | Citisquare",
     description:
-      "Connecting global capital to Africa's highest-impact opportunities. Featuring Kigali Innovation City — Rwanda's flagship innovation hub.",
+      "Invest in Rwanda's fastest growing asset classes. Expertly managed investments in Africa's rising markets.",
     type: "website",
     siteName: "Citisquare",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Citisquare – Africa's Investment Platform",
+    title: "RiseAfric Unit Trust Fund | Citisquare",
     description:
-      "Connecting global capital to Africa's highest-impact opportunities. Featuring Kigali Innovation City — Rwanda's flagship innovation hub.",
+      "Invest in Rwanda's fastest growing asset classes. Expertly managed investments in Africa's rising markets.",
   },
   icons: {
     icon: [

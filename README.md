@@ -1,8 +1,6 @@
-# Citisquare
+# RiseAfric Unit Trust Fund | Citisquare
 
-Official investment platform website for **Citisquare** — connecting global capital to Africa's highest-impact development opportunities.
-
-Featuring **Kigali Innovation City (KIC)** as our flagship project — the Digital Heart of Africa.
+Official website for the **RiseAfric Unit Trust Fund** — connecting diaspora and institutional investors to Rwanda's fastest-growing asset classes.
 
 Built with **Next.js 15**, **React 18**, **TypeScript**, **Tailwind CSS**, and **shadcn/ui**.
 
@@ -24,25 +22,11 @@ Open [http://localhost:3000](http://localhost:3000).
 | `npm run start` | Start production server |
 | `npm run lint` | Run ESLint |
 
-## Project Structure
-
-```
-src/
-├── app/                  # Next.js App Router (layout, page, globals.css)
-├── assets/               # Brand assets (Citisquare logos)
-├── components/
-│   ├── brand/            # CitisquareLogo
-│   ├── common/           # Shared components (SectionHeader)
-│   ├── layout/           # Navigation, MobileCTA
-│   ├── sections/         # Page sections (Hero, Vision, Opportunities, etc.)
-│   └── ui/               # shadcn/ui primitives
-└── lib/                  # Utilities
-```
-
 ## Brand
 
-- **Citisquare** — Africa's investment platform
-- **Kigali Innovation City** — Featured flagship opportunity (62-hectare mixed-use innovation hub in Rwanda)
+- **RiseAfric Unit Trust Fund** — diversified investment fund
+- **Citisquare** — investment platform brand
+- **Featured projects** — Vision City 2 and Kigali Innovation City
 
 ## Deploy
 

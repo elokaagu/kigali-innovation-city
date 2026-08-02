@@ -4,72 +4,72 @@
 
 @layer base {
   :root {
-    --background: 200 20% 98%;
-    --foreground: 200 50% 10%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 200 50% 10%;
+    --card-foreground: 0 0% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 200 50% 10%;
+    --popover-foreground: 0 0% 20%;
 
-    --primary: 48 91% 55%;
-    --primary-foreground: 200 50% 10%;
+    --primary: 43 85% 47%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 200 20% 94%;
-    --secondary-foreground: 200 50% 10%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 20%;
 
-    --muted: 200 15% 94%;
-    --muted-foreground: 200 10% 40%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 41%;
 
-    --accent: 156 95% 48%;
-    --accent-foreground: 200 50% 10%;
+    --accent: 43 85% 47%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 200 15% 88%;
-    --input: 200 15% 88%;
-    --ring: 48 91% 55%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 43 85% 47%;
 
     --radius: 0.5rem;
 
     /* Citisquare brand tokens */
-    --citisquare-dark: 200 50% 10%;
-    --citisquare-gold: 48 91% 55%;
-    --citisquare-green: 156 95% 48%;
-    --citisquare-grey: 200 10% 40%;
-    --citisquare-grey-light: 200 20% 96%;
-
-    /* KIC project tokens (featured opportunity) */
-    --kic-dark: var(--citisquare-dark);
-    --kic-gold: var(--citisquare-gold);
-    --kic-green: var(--citisquare-green);
-    --kic-purple: 270 65% 52%;
-    --kic-grey: var(--citisquare-grey);
-    --kic-grey-light: var(--citisquare-grey-light);
+    --citisquare-gold: 43 85% 47%;
+    --citisquare-gold-light: 43 85% 65%;
+    --citisquare-grey: 0 0% 41%;
+    --citisquare-grey-light: 0 0% 96%;
+    --citisquare-dark: 0 0% 15%;
 
     --font-display-tracking: -0.02em;
+    --blur-section: 20px;
   }
 
   .dark {
-    --background: 200 50% 10%;
-    --foreground: 200 10% 95%;
-    --card: 200 45% 13%;
-    --card-foreground: 200 10% 95%;
-    --popover: 200 45% 13%;
-    --popover-foreground: 200 10% 95%;
-    --primary: 48 91% 55%;
-    --primary-foreground: 200 50% 10%;
-    --secondary: 200 40% 16%;
-    --secondary-foreground: 200 10% 95%;
-    --muted: 200 40% 16%;
-    --muted-foreground: 200 10% 65%;
-    --accent: 156 95% 48%;
-    --accent-foreground: 200 50% 10%;
-    --border: 200 30% 20%;
-    --input: 200 30% 20%;
-    --ring: 48 91% 55%;
+    --background: 0 0% 10%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 15%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 43 85% 47%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 43 85% 47%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 43 85% 47%;
+    --citisquare-gold: 43 85% 47%;
+    --citisquare-gold-light: 43 85% 65%;
+    --citisquare-grey: 0 0% 65%;
+    --citisquare-grey-light: 0 0% 15%;
+    --citisquare-dark: 0 0% 95%;
   }
 }
 
@@ -86,35 +86,39 @@
     @apply font-semibold tracking-tight;
     letter-spacing: var(--font-display-tracking);
   }
-}
 
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  p {
+    max-width: 65ch;
   }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
-.animate-fade-in-up {
-  animation: fade-in-up 0.7s ease-out both;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
+.animate-scroll-left {
+  animation: scroll-left 30s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .animate-scroll-left,
+  .animate-fade-in,
   .animate-fade-in-up,
-  .animate-float {
-    animation: none;
+  .animate-fade-in-down,
+  .animate-fade-in-left,
+  .animate-fade-in-right,
+  .animate-fade-in-blur,
+  .animate-scale-in,
+  .animate-slide-in-bottom,
+  .animate-slide-in-top,
+  .animate-float,
+  .animate-pulse-glow,
+  .animate-section-blur {
+    animation: none !important;
   }
 }

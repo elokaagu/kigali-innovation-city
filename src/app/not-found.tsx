@@ -13,7 +13,7 @@ export default function NotFound() {
       </h1>
       <p className="text-white/60 max-w-md mb-8 leading-relaxed">
         The page you&apos;re looking for doesn&apos;t exist or may have been moved.
-        Explore our investment opportunities instead.
+        Explore our investment fund and projects instead.
       </p>
       <div className="flex flex-col sm:flex-row gap-3">
         <Button variant="cta" asChild>
@@ -23,9 +23,9 @@ export default function NotFound() {
           </Link>
         </Button>
         <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 bg-transparent" asChild>
-          <Link href="/#opportunities">
+          <Link href="/#projects-showcase">
             <ArrowLeft className="mr-2 h-4 w-4" />
-            View Opportunities
+            View Projects
           </Link>
         </Button>
       </div>

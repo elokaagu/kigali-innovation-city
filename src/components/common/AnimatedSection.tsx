@@ -1,63 +1,62 @@
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode } from "react";
-import { cn } from "@/lib/utils";
+import { ReactNode } from "react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 interface AnimatedSectionProps {
+  id: string;
   children: ReactNode;
-  id?: string;
   className?: string;
+  bgColor?: "background" | "citisquare-grey-light" | "citisquare-dark";
+  animation?: "fade-in" | "fade-in-up" | "fade-in-blur" | "scale-in" | "slide-in-bottom";
   delay?: number;
+  stagger?: boolean;
 }
 
-export default function AnimatedSection({
-  children,
-  id,
-  className,
+const AnimatedSection = ({ 
+  id, 
+  children, 
+  className = "", 
+  bgColor = "background",
+  animation = "fade-in-up",
   delay = 0,
-}: AnimatedSectionProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  stagger = false
+}: AnimatedSectionProps) => {
+  const { ref, isVisible } = useScrollAnimation({ delay });
+  
+  const bgClasses = {
+    "background": "bg-background",
+    "citisquare-grey-light": "bg-citisquare-grey-light", 
+    "citisquare-dark": "bg-citisquare-dark"
+  };
 
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-    if (prefersReducedMotion) {
-      setVisible(true);
-      return;
+  const getAnimationClasses = () => {
+    if (stagger) {
+      return isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8';
     }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
+    
+    const animationMap = {
+      "fade-in": isVisible ? 'animate-fade-in' : 'opacity-0',
+      "fade-in-up": isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8',
+      "fade-in-blur": isVisible ? 'animate-fade-in-blur' : 'opacity-0 blur-sm translate-y-8',
+      "scale-in": isVisible ? 'animate-scale-in' : 'opacity-0 scale-95',
+      "slide-in-bottom": isVisible ? 'animate-slide-in-bottom' : 'opacity-0 translate-y-12'
+    };
+    
+    return animationMap[animation];
+  };
 
   return (
-    <div
-      id={id}
-      ref={ref as React.RefObject<HTMLDivElement>}
-      className={cn(
-        "transition-all duration-700 ease-out",
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
-        className
-      )}
-      style={{ transitionDelay: visible ? `${delay}ms` : "0ms" }}
+    <section 
+      ref={ref}
+      id={id} 
+      className={`py-12 sm:py-16 lg:py-20 ${bgClasses[bgColor]} transition-all duration-700 ease-out ${getAnimationClasses()} ${className}`}
     >
-      {children}
-    </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {children}
+      </div>
+    </section>
   );
-}
+};
+
+export default AnimatedSection;

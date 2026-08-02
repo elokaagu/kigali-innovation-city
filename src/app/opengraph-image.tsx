@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Citisquare – Africa's Investment Platform";
+export const alt = "RiseAfric Unit Trust Fund | Citisquare";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -16,7 +16,7 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "flex-start",
-          background: "linear-gradient(135deg, #0E222B 0%, #1a3340 100%)",
+          background: "linear-gradient(135deg, #262626 0%, #1a1a1a 100%)",
           padding: "60px 80px",
         }}
       >
@@ -33,7 +33,7 @@ export default function OpenGraphImage() {
               width: "56px",
               height: "56px",
               borderRadius: "14px",
-              background: "#F5D424",
+              background: "#C9A227",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -48,8 +48,8 @@ export default function OpenGraphImage() {
             <span style={{ fontSize: "22px", fontWeight: 600, color: "white" }}>
               Citisquare
             </span>
-            <span style={{ fontSize: "14px", color: "#F5D424", letterSpacing: "0.1em" }}>
-              AFRICA&apos;S INVESTMENT PLATFORM
+            <span style={{ fontSize: "14px", color: "#C9A227", letterSpacing: "0.1em" }}>
+              RISEAFRIC UNIT TRUST FUND
             </span>
           </div>
         </div>
@@ -63,10 +63,10 @@ export default function OpenGraphImage() {
             maxWidth: "900px",
           }}
         >
-          Connecting Global Capital to Africa
+          Invest in Rwanda&apos;s Fastest Growing Asset Classes
         </h1>
         <p style={{ fontSize: "24px", color: "rgba(255,255,255,0.7)", maxWidth: "800px" }}>
-          Featuring Kigali Innovation City — 62-hectare mixed-use innovation hub · Rwanda
+          Expertly managed investments in Africa&apos;s rising markets · 8–10% target returns
         </p>
         <div
           style={{
@@ -76,12 +76,12 @@ export default function OpenGraphImage() {
           }}
         >
           {[
-            { val: "62 ha", label: "KIC Development" },
-            { val: "5", label: "Phases" },
-            { val: "4", label: "Universities" },
+            { val: "8–10%", label: "Target Returns" },
+            { val: "$5M", label: "Fund Size" },
+            { val: "2", label: "Flagship Projects" },
           ].map((s) => (
             <div key={s.label} style={{ display: "flex", flexDirection: "column" }}>
-              <span style={{ fontSize: "32px", fontWeight: 700, color: "#F5D424" }}>
+              <span style={{ fontSize: "32px", fontWeight: 700, color: "#C9A227" }}>
                 {s.val}
               </span>
               <span style={{ fontSize: "14px", color: "rgba(255,255,255,0.5)" }}>
