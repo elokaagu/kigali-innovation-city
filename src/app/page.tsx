@@ -2,12 +2,12 @@ import Navigation from "@/components/layout/Navigation";
 import HeroSection from "@/components/sections/HeroSection";
 import TickerSection from "@/components/sections/TickerSection";
 import AboutSection from "@/components/sections/AboutSection";
-import BenefitsSection from "@/components/sections/BenefitsSection";
-import InvestmentStrategySection from "@/components/sections/InvestmentStrategySection";
-import WhyKigaliSection from "@/components/sections/WhyKigaliSection";
-import ProjectsShowcaseSection from "@/components/sections/ProjectsShowcaseSection";
+import InvestmentHighlightsSection from "@/components/sections/InvestmentHighlightsSection";
+import AlphaThesisSection from "@/components/sections/AlphaThesisSection";
+import MarketContextSection from "@/components/sections/MarketContextSection";
+import TheApexSection from "@/components/sections/TheApexSection";
+import KigaliTechTowerSection from "@/components/sections/KigaliTechTowerSection";
 import PartnersSection from "@/components/sections/PartnersSection";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import FAQSection from "@/components/sections/FAQSection";
 import FooterSection from "@/components/sections/FooterSection";
 import MobileCTA from "@/components/layout/MobileCTA";
@@ -19,25 +19,20 @@ export default function HomePage() {
       <Navigation />
       <HeroSection />
       <TickerSection />
-      <div
-        className="animate-fade-in"
-        style={{ animationDelay: "1.2s", animationFillMode: "both" }}
-      >
-        <SectionSeparator variant="subtle" />
-      </div>
+      <SectionSeparator variant="subtle" />
       <AboutSection />
       <SectionSeparator />
-      <BenefitsSection />
+      <InvestmentHighlightsSection />
       <SectionSeparator />
-      <InvestmentStrategySection />
+      <AlphaThesisSection />
       <SectionSeparator variant="subtle" />
-      <WhyKigaliSection />
+      <MarketContextSection />
       <SectionSeparator />
-      <ProjectsShowcaseSection />
+      <TheApexSection />
+      <SectionSeparator variant="gradient" />
+      <KigaliTechTowerSection />
       <SectionSeparator variant="gradient" />
       <PartnersSection />
-      <SectionSeparator variant="gradient" />
-      <TestimonialsSection />
       <SectionSeparator variant="subtle" />
       <FAQSection />
       <FooterSection />

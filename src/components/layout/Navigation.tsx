@@ -10,9 +10,10 @@ import citisquareLogoWhite from "@/assets/citisquare-logo-white-alt.png";
 const navItems = [
   { id: "hero", label: "Home" },
   { id: "about", label: "About" },
-  { id: "benefits", label: "Benefits" },
-  { id: "projects-showcase", label: "Projects" },
-  { id: "partners", label: "Partners" },
+  { id: "investment", label: "Investment" },
+  { id: "the-apex", label: "The Apex" },
+  { id: "kigali-tech-tower", label: "Tech Tower" },
+  { id: "partners", label: "Media" },
 ];
 
 export default function Navigation() {

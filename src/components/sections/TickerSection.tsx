@@ -1,12 +1,14 @@
+import { theApex } from "@/data/the-apex";
+
 const TickerSection = () => {
   const tickerItems = [
-    "Real Estate Investment Consultancy",
-    "Project Origination · Structuring · Development",
-    "Legally Structured, High-Return Opportunities",
-    "Good Governance at Every Stage",
-    "Nigeria & Rwanda Flagship Projects",
-    "Institutional & Retail Co-Investment",
-    "Vision City 2 · Kigali Innovation City",
+    `The Apex · ${theApex.tagline}`,
+    `${theApex.totalCost} Total Project Cost · ${theApex.debtEquity} Debt/Equity`,
+    `${theApex.projectedValue} Knight Frank Valuation`,
+    "Kigali Tech Tower · 6-Storey Mixed-Use Innovation Hub",
+    "RDB Free Trade Zone · KIC Main Entrance",
+    "EDGE/LEED Green Certification Pathway",
+    "5 Revenue Streams · SPV · REIT-Ready",
   ];
 
   return (

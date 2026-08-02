@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { COMPANY_BIO_SHORT, COMPANY_NAME, COMPANY_TAGLINE } from "@/data/company";
+import { COMPANY_NAME } from "@/data/company";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -15,28 +15,31 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://citisquare-kigali-connect-main.vercel.app"
   ),
-  title: `${COMPANY_NAME} | Real Estate Investment Consultancy`,
-  description: COMPANY_BIO_SHORT,
+  title: `${COMPANY_NAME} | The Apex · Kigali Tech Tower`,
+  description:
+    "US$28M GreenTech Tower at KIC main entrance. Knight Frank validated $40.7M. Real estate investment consultancy by Citisquare Africa.",
   keywords: [
     "Citisquare Africa",
-    "real estate investment consultancy",
-    "Africa real estate",
-    "project origination",
-    "real estate structuring",
-    "Nigeria real estate",
+    "The Apex",
+    "Kigali Tech Tower",
     "Kigali Innovation City",
-    "institutional real estate",
+    "GreenTech Tower",
+    "RDB Free Trade Zone",
+    "Knight Frank",
+    "Africa real estate investment",
   ],
   openGraph: {
-    title: `${COMPANY_NAME} | Real Estate Investment Consultancy`,
-    description: COMPANY_TAGLINE,
+    title: `${COMPANY_NAME} | The Apex — East Africa's Premier Technology Investment Address`,
+    description:
+      "US$28M mixed-use development at KIC main entrance. $40.7M Knight Frank valuation. SPV · REIT-ready · ESG-linked.",
     type: "website",
     siteName: COMPANY_NAME,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${COMPANY_NAME} | Real Estate Investment Consultancy`,
-    description: COMPANY_TAGLINE,
+    title: `${COMPANY_NAME} | The Apex · Kigali Tech Tower`,
+    description:
+      "US$28M GreenTech Tower at KIC main entrance. Knight Frank validated $40.7M projected value at completion.",
   },
   icons: {
     icon: [

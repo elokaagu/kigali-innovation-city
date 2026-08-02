@@ -1,13 +1,10 @@
-import { Button } from "@/components/ui/button";
 import { Download, Mail } from "lucide-react";
-import heroImage from "@/assets/kigali-skyline.jpg";
-import {
-  COMPANY_NAME,
-  COMPANY_MISSION,
-  COMPANY_TAGLINE,
-} from "@/data/company";
+import { Button } from "@/components/ui/button";
+import heroImage from "@/assets/kigali-innovation-city.jpeg";
+import { theApex } from "@/data/the-apex";
+import { COMPANY_NAME } from "@/data/company";
 
-const HeroSection = () => {
+export default function HeroSection() {
   return (
     <section
       id="hero"
@@ -17,65 +14,83 @@ const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage.src})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 to-black/50" />
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-32">
         <div className="max-w-4xl mx-auto">
+          <span className="inline-block mb-4 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-citisquare-gold/20 text-citisquare-gold border border-citisquare-gold/30 animate-fade-in-up">
+            by {COMPANY_NAME}
+          </span>
+
           <h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight tracking-tight text-center animate-fade-in-down"
-            style={{
-              letterSpacing: "var(--font-display-tracking)",
-              animationDelay: "0.2s",
-              animationFillMode: "both",
-            }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight animate-fade-in-down"
+            style={{ letterSpacing: "var(--font-display-tracking)", animationDelay: "0.2s", animationFillMode: "both" }}
           >
-            {COMPANY_NAME}
+            {theApex.name}
           </h1>
+
+          <p
+            className="text-base sm:text-lg text-citisquare-gold/90 mb-2 font-medium animate-fade-in-up"
+            style={{ animationDelay: "0.3s", animationFillMode: "both" }}
+          >
+            {theApex.subtitle}
+          </p>
+
           <h2
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-citisquare-gold mb-3 sm:mb-4 font-medium px-2 text-center animate-fade-in-up"
+            className="text-xl sm:text-2xl md:text-3xl text-citisquare-gold mb-6 font-medium animate-fade-in-up"
             style={{ animationDelay: "0.4s", animationFillMode: "both" }}
           >
-            {COMPANY_TAGLINE}
+            {theApex.tagline}
           </h2>
+
           <p
-            className="text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8 font-medium px-2 text-center max-w-3xl mx-auto animate-fade-in-up"
-            style={{ animationDelay: "0.6s", animationFillMode: "both" }}
+            className="text-base sm:text-lg text-white/85 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up"
+            style={{ animationDelay: "0.5s", animationFillMode: "both" }}
           >
-            {COMPANY_MISSION}
+            {theApex.description}
+          </p>
+
+          <p className="text-sm text-white/60 mb-8 animate-fade-in-up" style={{ animationDelay: "0.55s", animationFillMode: "both" }}>
+            {theApex.structure}
           </p>
 
           <div
-            className="flex flex-col sm:flex-row justify-center items-center gap-4 px-4 animate-fade-in-up"
-            style={{ animationDelay: "0.8s", animationFillMode: "both" }}
+            className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto mb-10 animate-fade-in-up"
+            style={{ animationDelay: "0.6s", animationFillMode: "both" }}
+          >
+            {theApex.stats.map((stat) => (
+              <div key={stat.label} className="p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                <p className="text-xl sm:text-2xl font-bold text-citisquare-gold">{stat.value}</p>
+                <p className="text-xs text-white/60 mt-1">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+
+          <div
+            className="flex flex-col sm:flex-row justify-center items-center gap-4 animate-fade-in-up"
+            style={{ animationDelay: "0.7s", animationFillMode: "both" }}
           >
             <a
               href="https://drive.google.com/file/d/1zeD6v9PGZ-85BvbH551YwyaLNzbVgcMY/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto group"
             >
-              <Button
-                variant="cta"
-                size="lg"
-                className="w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-6 text-lg sm:text-xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl group-hover:animate-pulse-glow"
-              >
-                <Download className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:translate-y-[-2px]" />
-                Get Investment Deck
+              <Button variant="cta" size="lg" className="px-8 py-6 text-lg">
+                <Download className="mr-2 h-5 w-5" />
+                Investor Deck
               </Button>
             </a>
-
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLScf_0y5IZzTQWGdKB9XqyYRDZr-Rrer3VCXE80Z6wKdK4Mwbg/viewform"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto"
             >
               <Button
                 variant="outline"
                 size="lg"
-                className="w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-6 text-lg sm:text-xl border-white/30 text-black hover:bg-white/10 hover:border-white/50 hover:text-white transform transition-all duration-300 hover:scale-105"
+                className="px-8 py-6 text-lg border-white/30 text-white hover:bg-white/10 bg-white/5"
               >
                 <Mail className="mr-2 h-5 w-5" />
                 Partner With Us
@@ -85,13 +100,11 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-float">
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center transition-all duration-300 hover:border-citisquare-gold/50">
-          <div className="w-1 h-3 bg-white/60 rounded-full mt-2 transition-all duration-300 hover:bg-citisquare-gold/70" />
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-citisquare-gold/70 rounded-full mt-2" />
         </div>
       </div>
     </section>
   );
-};
-
-export default HeroSection;
+}

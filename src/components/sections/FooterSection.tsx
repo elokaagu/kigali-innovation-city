@@ -1,5 +1,5 @@
 import { Mail, Phone, Instagram, Linkedin, MapPin } from "lucide-react";
-import { COMPANY_BIO_SHORT, COMPANY_NAME } from "@/data/company";
+import { COMPANY_BIO_SHORT, COMPANY_CONTACT, COMPANY_NAME } from "@/data/company";
 
 const FooterSection = () => {
   return (
@@ -37,26 +37,26 @@ const FooterSection = () => {
               <div className="flex items-center">
                 <Mail className="h-5 w-5 text-citisquare-gold mr-3" />
                 <a 
-                  href="mailto:uche.nnama@citisquare.africa" 
+                  href={`mailto:${COMPANY_CONTACT.email}`} 
                   className="text-white/80 hover:text-citisquare-gold transition-colors text-sm"
                 >
-                  uche.nnama@citisquare.africa
+                  {COMPANY_CONTACT.email}
                 </a>
               </div>
               <div className="flex items-center">
                 <Phone className="h-5 w-5 text-citisquare-gold mr-3" />
                 <a 
-                  href="tel:+250788123456" 
+                  href={`tel:${COMPANY_CONTACT.phone.replace(/\s/g, "")}`} 
                   className="text-white/80 hover:text-citisquare-gold transition-colors text-sm"
                 >
-                  +250 788 123 456
+                  {COMPANY_CONTACT.phone}
                 </a>
               </div>
               <div className="flex items-start">
                 <MapPin className="h-5 w-5 text-citisquare-gold mr-3 mt-0.5" />
                 <span className="text-white/80 text-sm">
-                  Kigali, Rwanda<br />
-                  Vision City 2
+                  Kigali Innovation City<br />
+                  RDB Free Trade Zone, Rwanda
                 </span>
               </div>
             </div>
@@ -68,14 +68,17 @@ const FooterSection = () => {
               <a href="#about" className="block text-white/80 hover:text-citisquare-gold transition-colors text-sm">
                 About Citisquare
               </a>
-              <a href="#benefits" className="block text-white/80 hover:text-citisquare-gold transition-colors text-sm">
-                Benefits
+              <a href="#investment" className="block text-white/80 hover:text-citisquare-gold transition-colors text-sm">
+                Investment
               </a>
-              <a href="#projects-showcase" className="block text-white/80 hover:text-citisquare-gold transition-colors text-sm">
-                Investment Projects
+              <a href="#the-apex" className="block text-white/80 hover:text-citisquare-gold transition-colors text-sm">
+                The Apex
+              </a>
+              <a href="#kigali-tech-tower" className="block text-white/80 hover:text-citisquare-gold transition-colors text-sm">
+                Kigali Tech Tower
               </a>
               <a href="#partners" className="block text-white/80 hover:text-citisquare-gold transition-colors text-sm">
-                Partners
+                Media
               </a>
               <a href="/certificates" className="block text-white/80 hover:text-citisquare-gold transition-colors text-sm">
                 Certificates & Registrations

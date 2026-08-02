@@ -7,6 +7,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { theApex } from "@/data/the-apex";
+import { kigaliTechTower } from "@/data/kigali-tech-tower";
+import { COMPANY_NAME } from "@/data/company";
 
 const FAQSection = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -14,45 +17,42 @@ const FAQSection = () => {
   const faqs = [
     {
       id: "item-1",
-      question: "What is Citisquare Africa?",
+      question: `What is ${COMPANY_NAME}?`,
       answer:
-        "Citisquare Africa is a real estate investment consultancy organisation on a mission to democratise access to legally structured, high-return, capital-growth real estate opportunities across the continent. We specialise in project origination, structuring, and development — identifying high-potential opportunities, structuring them into sound investable vehicles, and guiding them through to delivery.",
+        "Citisquare Africa is a real estate investment consultancy focused on project origination, structuring, and development — building landmark, institutional-grade assets in Africa's most strategically positioned economic zones, led by Dr Uche Nnama.",
     },
     {
       id: "item-2",
-      question: "What services does Citisquare Africa provide?",
-      answer:
-        "We provide end-to-end real estate investment consultancy: project origination (identifying high-potential assets), structuring (creating legally sound, investable vehicles), and development (guiding projects through to delivery). We work with individual investors, institutions, and development finance partners across Africa.",
+      question: "What is The Apex?",
+      answer: `${theApex.description} Total project cost: ${theApex.totalCost}. Knight Frank independent feasibility validates projected value at completion of ${theApex.projectedValue}. ${theApex.structure}.`,
     },
     {
       id: "item-3",
-      question: "What types of projects does Citisquare Africa work on?",
-      answer:
-        "Our portfolio includes flagship developments such as Vision City 2 in Kigali and Kigali Innovation City in Rwanda, alongside opportunities across Nigeria's real estate and financial services ecosystem. We focus on high-return, capital-growth real estate with strong governance structures.",
+      question: "What is Kigali Tech Tower?",
+      answer: kigaliTechTower.overview,
     },
     {
       id: "item-4",
-      question: "Who can invest with Citisquare Africa?",
+      question: "Why is the KIC main entrance location significant?",
       answer:
-        "We work with individual investors, institutions, family offices, and development finance partners. Whether you are a diaspora investor seeking structured co-ownership or an institutional partner looking for origination and development mandates, our team can guide you through the process.",
+        "The Apex sits at the sole access point to KIC's 61-hectare campus within the RDB Free Trade Zone. Every institution, investor, and visitor passes it first. SEZ tax incentives structurally support tenant rent capacity — a competitive advantage no building outside the zone can replicate.",
     },
     {
       id: "item-5",
-      question: "What makes Citisquare Africa different?",
-      answer:
-        "We combine project origination, legal structuring, and development delivery under one governance-led consultancy — backed by strong partnerships across Nigeria's real estate and financial services ecosystem. Every opportunity is structured for transparency and investor protection.",
+      question: "What are the five revenue streams?",
+      answer: theApex.revenueStreams.map((s) => `${s.name} (${s.detail})`).join("; "),
     },
     {
       id: "item-6",
-      question: "Can international investors participate?",
+      question: "Who are the target investors?",
       answer:
-        "Yes. We specialise in serving African diaspora investors and international partners, providing comprehensive support with legal documentation, project due diligence, and ongoing investment oversight.",
+        "DFIs and impact funds (Africa50, IFC, BADEA), PE and infrastructure investors, sovereign and pension funds, and structured diaspora co-investment vehicles. Anchor tenant LOI precedes equity conversations.",
     },
     {
       id: "item-7",
       question: "How do I get started?",
       answer:
-        "Download our investment deck to review current opportunities, then contact us through our partnership form. Our team will walk you through available projects and co-investment structures.",
+        "Download the investor deck or contact our team through the partnership form. We provide full project materials including Knight Frank feasibility validation and capital structure overview.",
     },
   ];
 
@@ -70,7 +70,7 @@ const FAQSection = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Get answers to the most common questions about working with Citisquare Africa
+            Investor questions about The Apex and Kigali Tech Tower
           </p>
         </div>
 
@@ -92,17 +92,14 @@ const FAQSection = () => {
         </Accordion>
 
         <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-4 text-center">Still have questions?</p>
-          <div className="flex justify-center">
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLScf_0y5IZzTQWGdKB9XqyYRDZr-Rrer3VCXE80Z6wKdK4Mwbg/viewform"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center bg-citisquare-gold text-white px-6 py-3 rounded-md font-medium hover:bg-citisquare-gold/90 transition-colors"
-            >
-              Contact Us
-            </a>
-          </div>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScf_0y5IZzTQWGdKB9XqyYRDZr-Rrer3VCXE80Z6wKdK4Mwbg/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center bg-citisquare-gold text-white px-6 py-3 rounded-md font-medium hover:bg-citisquare-gold/90 transition-colors"
+          >
+            Contact Our Team
+          </a>
         </div>
       </div>
     </section>
