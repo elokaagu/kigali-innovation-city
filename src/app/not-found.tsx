@@ -13,7 +13,7 @@ export default function NotFound() {
       </h1>
       <p className="text-white/60 max-w-md mb-8 leading-relaxed">
         The page you&apos;re looking for doesn&apos;t exist or may have been moved.
-        Explore our investment fund and projects instead.
+        Explore our projects and partnership opportunities instead.
       </p>
       <div className="flex flex-col sm:flex-row gap-3">
         <Button variant="cta" asChild>

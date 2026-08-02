@@ -11,7 +11,6 @@ const navItems = [
   { id: "hero", label: "Home" },
   { id: "about", label: "About" },
   { id: "benefits", label: "Benefits" },
-  { id: "fund", label: "Fund" },
   { id: "projects-showcase", label: "Projects" },
   { id: "partners", label: "Partners" },
 ];

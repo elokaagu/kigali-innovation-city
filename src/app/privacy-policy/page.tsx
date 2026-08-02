@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { COMPANY_NAME } from "@/data/company";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -23,7 +24,7 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2 className="text-2xl font-semibold text-foreground mb-4">1. Introduction</h2>
             <p className="text-muted-foreground leading-relaxed">
-              RiseAfric Unit Trust Fund (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy.
+              {COMPANY_NAME} (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy.
               This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you
               visit our website or use our services.
             </p>
@@ -64,7 +65,7 @@ export default function PrivacyPolicyPage() {
               If you have any questions about this Privacy Policy, please contact us at:
             </p>
             <div className="mt-4 p-4 bg-muted rounded-lg">
-              <p className="text-foreground font-medium">RiseAfric Unit Trust Fund</p>
+              <p className="text-foreground font-medium">{COMPANY_NAME}</p>
               <p className="text-muted-foreground">Email: uche.nnama@citisquare.africa</p>
               <p className="text-muted-foreground">Address: Kigali, Rwanda, Vision City 2</p>
             </div>

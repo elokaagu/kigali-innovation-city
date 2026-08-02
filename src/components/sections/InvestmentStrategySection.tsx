@@ -31,8 +31,8 @@ const InvestmentStrategySection = () => {
   return (
     <AnimatedSection id="investment-strategy" bgColor="background" animation="fade-in-blur">
       <SectionHeader 
-        title="Investment Strategy" 
-        subtitle="Our diversified financing strategy allocates funds across multiple high-growth sectors to maximize returns while managing risk through strategic diversification."
+        title="Our Focus Areas" 
+        subtitle="We originate, structure, and develop real estate opportunities across high-growth sectors — delivering bankable projects for investors and institutions."
       />
 
       <StaggeredGrid 

@@ -3,8 +3,6 @@ import HeroSection from "@/components/sections/HeroSection";
 import TickerSection from "@/components/sections/TickerSection";
 import AboutSection from "@/components/sections/AboutSection";
 import BenefitsSection from "@/components/sections/BenefitsSection";
-import FundSection from "@/components/sections/FundSection";
-import FundDetailsSection from "@/components/sections/FundDetailsSection";
 import InvestmentStrategySection from "@/components/sections/InvestmentStrategySection";
 import WhyKigaliSection from "@/components/sections/WhyKigaliSection";
 import ProjectsShowcaseSection from "@/components/sections/ProjectsShowcaseSection";
@@ -30,10 +28,6 @@ export default function HomePage() {
       <AboutSection />
       <SectionSeparator />
       <BenefitsSection />
-      <SectionSeparator />
-      <FundSection />
-      <SectionSeparator />
-      <FundDetailsSection />
       <SectionSeparator />
       <InvestmentStrategySection />
       <SectionSeparator variant="subtle" />

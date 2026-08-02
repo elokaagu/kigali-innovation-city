@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { COMPANY_NAME } from "@/data/company";
 
 export default function RegulatoryDisclosurePage() {
   return (
@@ -21,25 +22,26 @@ export default function RegulatoryDisclosurePage() {
 
         <div className="space-y-8">
           <section>
-            <h2 className="text-2xl font-semibold text-foreground mb-4">1. Regulatory Authorization</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-4">1. Company Overview</h2>
             <p className="text-muted-foreground leading-relaxed">
-              RiseAfric Unit Trust Fund is authorized and regulated by the Rwanda Development Board (RDB)
-              and operates under the oversight of relevant Rwandan financial regulatory authorities.
+              {COMPANY_NAME} is a real estate investment consultancy specialising in project
+              origination, structuring, and development across African markets. We operate with
+              good governance at every stage of the investment lifecycle.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-foreground mb-4">4. Target Returns</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-4">2. Investment Risk</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              The fund targets annual returns of 8 to 10% through diversified investments across
-              Rwanda&apos;s high-growth sectors. These are projections only and not guaranteed.
+              All real estate investments carry risk. Past performance does not guarantee future
+              results. Projected returns are estimates only and are not guaranteed.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-foreground mb-4">8. Contact Information</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-4">3. Contact Information</h2>
             <div className="mt-4 p-4 bg-muted rounded-lg">
-              <p className="text-foreground font-medium">RiseAfric Unit Trust Fund</p>
+              <p className="text-foreground font-medium">{COMPANY_NAME}</p>
               <p className="text-muted-foreground">Email: uche.nnama@citisquare.africa</p>
               <p className="text-muted-foreground">Address: Kigali, Rwanda, Vision City 2</p>
               <p className="text-muted-foreground">Phone: +250 788 123 456</p>

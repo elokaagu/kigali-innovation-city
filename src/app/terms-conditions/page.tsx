@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { COMPANY_NAME } from "@/data/company";
 
 export default function TermsConditionsPage() {
   return (
@@ -23,23 +24,24 @@ export default function TermsConditionsPage() {
           <section>
             <h2 className="text-2xl font-semibold text-foreground mb-4">1. Agreement to Terms</h2>
             <p className="text-muted-foreground leading-relaxed">
-              By accessing and using the services provided by RiseAfric Unit Trust Fund,
-              you agree to be bound by these Terms and Conditions.
+              By accessing and using the services provided by {COMPANY_NAME}, you agree to be
+              bound by these Terms and Conditions.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-foreground mb-4">2. Investment Services</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-4">2. Services</h2>
             <p className="text-muted-foreground leading-relaxed">
-              The RiseAfric Unit Trust Fund provides investment opportunities in Rwandan real estate,
-              including Vision City 2 and Kigali Innovation City development projects.
+              {COMPANY_NAME} provides real estate investment consultancy services including project
+              origination, structuring, and development across African markets, including flagship
+              projects such as Vision City 2 and Kigali Innovation City.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold text-foreground mb-4">10. Contact Information</h2>
             <div className="mt-4 p-4 bg-muted rounded-lg">
-              <p className="text-foreground font-medium">RiseAfric Unit Trust Fund</p>
+              <p className="text-foreground font-medium">{COMPANY_NAME}</p>
               <p className="text-muted-foreground">Email: uche.nnama@citisquare.africa</p>
               <p className="text-muted-foreground">Address: Kigali, Rwanda, Vision City 2</p>
             </div>

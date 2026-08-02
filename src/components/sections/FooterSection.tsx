@@ -71,9 +71,6 @@ const FooterSection = () => {
               <a href="#benefits" className="block text-white/80 hover:text-citisquare-gold transition-colors text-sm">
                 Benefits
               </a>
-              <a href="#fund" className="block text-white/80 hover:text-citisquare-gold transition-colors text-sm">
-                The Fund
-              </a>
               <a href="#projects-showcase" className="block text-white/80 hover:text-citisquare-gold transition-colors text-sm">
                 Investment Projects
               </a>
